@@ -10,14 +10,66 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: var(--white);
 }
+
+/* Light Theme  */
+:root {
+  --shadow: 2px 2px 10px 0 rgba(0,0,0,.2), -2px -2px 10px 0 rgba(0,0,0,.2);
+  --black: #000;
+  --white: #fefefe;
+  --grey: #ddd;
+  --percent: #4cd137;
+  --divide: #00a8ff;
+  --multiple: #9c88ff;
+  --minus: #fbc531;
+  --plus: #487eb0;
+  --equal: #e84118;
+}
+
+/* Dark Theme */
+[theme="dark"] {
+  --shadow: 2px 2px 10px 0 rgba(255,255,255,.1), -2px -2px 10px 0 rgba(255,255,255,.1);
+  --black: #fefefe;
+  --white: #000;
+  --grey: #192a56;
+  --percent: #44bd32;
+  --divide: #0097e6;
+  --multiple: #8c7ae6;
+  --minus: #ff8906;
+  --plus: #40739e;
+  --equal: #c23616;
+}
+
+/*  Change Theme effect  */
+.change_theme {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+}
+i {
+  font-size: 25px;
+  display: block;
+  cursor: pointer;
+}
+i.fa-sun {
+  color: #000;
+}
+i.fa-moon {
+  color: #fff;
+}
+[show="false"] {
+  display: none !important;
+}
+
+/*  Calculator  */
 .calculator {
   text-align: center;
-  box-shadow: 2px 2px 10px 0 rgba(0,0,0,.2), -2px -2px 10px 0 rgba(0,0,0,.2);
+  box-shadow: var(--shadow);
 }
 #input, #result {
   width: 80vw;
-  background: #fefefe;
+  background: var(--white);
   color: #000;
   height: 80px;
   display: flex;
@@ -25,13 +77,17 @@ body {
   font-size: 25px;
   overflow: hidden;
   padding: 0 15px;
+  color: var(--black);
 }
 #result {
   flex-direction: row-reverse;
 }
+
+/* Keyboard */
 .keyboard {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  background: var(--white);
 }
 .keyboard .key {
   cursor: pointer;
@@ -39,28 +95,43 @@ body {
   justify-content: center;
   align-items: center;
   height: calc(80vw / 4);
+  color: var(--black);
 }
 .clear, .delete, .percent, .multiple, .divide, .minus, .plus, .equal {
   border-radius: 50%;
 }
 .clear, .delete {
-  background: #ddd;
+  background: var(--grey);
 }
 .percent {
-  background: #4cd137;
+  background: var(--percent);
 }
 .divide {
-  background: #00a8ff;
+  background: var(--divide);
 }
 .multiple {
-  background: #9c88ff;
+  background: var(--multiple);
 }
 .minus {
-  background: #fbc531 ;
+  background: var(--minus);
 }
 .plus {
-  background: #487eb0;
+  background: var(--plus);
 }
 .equal {
-  background: #e84118;
+  background: var(--equal);
 } 
+
+/* For Desktop */
+@media screen and (min-width: 900px) {
+  #input, #result {
+    height: 120px;
+    font-size: 30px;
+  }
+  .keyboard .key {
+    font-size: 30px;
+  }
+  i {
+    font-size: 40px;
+  }
+}

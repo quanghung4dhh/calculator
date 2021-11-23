@@ -12,6 +12,9 @@ window.onload = () => {
   
   //Calculate the input
   key[19].onclick = Calc;
+  
+  //Change Theme
+  document.querySelector('.change_theme').onclick = changeTheme;
 }
 
 //When click
@@ -47,5 +50,20 @@ function Calc () {
     result.innerHTML = Number(eval(input).toPrecision(10));
   } catch(err) {
     result.innerText = 'Lỗi cú pháp';
+  }
+}
+
+//Change Theme
+function changeTheme () {
+  let light = document.querySelector('.fa-sun');
+  let dark = document.querySelector('.fa-moon');
+  if (light.getAttribute('show') == 'true') {
+    dark.setAttribute('show', 'true');
+    light.setAttribute('show', 'false');
+    document.documentElement.setAttribute('theme', 'dark');
+  } else {
+    dark.setAttribute('show', 'false');
+    light.setAttribute('show', 'true');
+    document.documentElement.setAttribute('theme', 'light');
   }
 }
