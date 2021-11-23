@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');  
 * {
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif; 
 }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.calculator {
+  text-align: center;
+  box-shadow: 2px 2px 10px 0 rgba(0,0,0,.2), -2px -2px 10px 0 rgba(0,0,0,.2);
+}
+#input, #result {
+  width: 80vw;
+  background: #fefefe;
+  color: #000;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  overflow: hidden;
+  padding: 0 15px;
+}
+#result {
+  flex-direction: row-reverse;
+}
+.keyboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.keyboard .key {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(80vw / 4);
+}
+.clear, .delete, .percent, .multiple, .divide, .minus, .plus, .equal {
+  border-radius: 50%;
+}
+.clear, .delete {
+  background: #ddd;
+}
+.percent {
+  background: #4cd137;
+}
+.divide {
+  background: #00a8ff;
+}
+.multiple {
+  background: #9c88ff;
+}
+.minus {
+  background: #fbc531 ;
+}
+.plus {
+  background: #487eb0;
+}
+.equal {
+  background: #e84118;
+} 
