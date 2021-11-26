@@ -47,7 +47,7 @@ function Calc () {
   input = input.replace(/%/g, '/100 ');
   if (input == '') return;
   try {
-    result.innerHTML = Number(eval(input).toPrecision(10));
+    result.innerHTML = Number(eval(input).toPrecision(15));
   } catch(err) {
     result.innerText = 'Lỗi cú pháp';
   }
